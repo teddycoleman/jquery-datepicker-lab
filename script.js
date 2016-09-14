@@ -18,6 +18,11 @@ function daysLeft() {
 	// here we use the native Math object to solve a problem:
 	var diffDays = Math.round((a - b)/c);
 
+	var localStorageKey = a;
+	if(!localStorage.getItem(localStorageKey)){
+		localStorage.setItem(localStorageKey,diffDays)
+	}
+
 	if( $('input').val() ){
 		if (diffDays < 0 ) {
 			resultString = "<p>Please pick a date in the future.</p>";
